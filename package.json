@@ -1,0 +1,26 @@
+{
+  "name": "coursework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --perf-basic-prof-only-functions app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "0x": "^4.10.2",
+    "cids": "^1.1.6",
+    "crypto": "^1.0.1",
+    "libp2p": "^0.30.12",
+    "libp2p-bootstrap": "^0.12.2",
+    "libp2p-kad-dht": "^0.21.0",
+    "libp2p-mplex": "^0.10.2",
+    "libp2p-noise": "^2.0.5",
+    "libp2p-tcp": "^0.15.3",
+    "multihashes": "^4.0.2",
+    "peer-id": "^0.14.8",
+    "uint8arrays": "^2.1.4",
+    "xor-distance": "^2.0.0"
+  }
+}
