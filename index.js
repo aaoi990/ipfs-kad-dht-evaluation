@@ -18,7 +18,6 @@ const delay = require('delay')
 const distance = require('xor-distance')
 const all = require('it-all')
 
-
 /**
  * Parse the CID and provider peer id from the key
  *
@@ -133,12 +132,10 @@ const sort_closest_nodes_dht = async (peers, query) => {
 
 ;
 (async () => {
-  const nodes = await Promise.all([
-    createNode(), createNode(), createNode(), createNode(), createNode(), createNode(), createNode(), createNode(), createNode(), createNode(),
-    createNode(), createNode(), createNode(), createNode(), createNode(), createNode(), createNode(), createNode(), createNode(), createNode(),
-    createNode(), createNode(), createNode(), createNode(), createNode(), createNode(), createNode(), createNode(), createNode(), createNode(),
-    createNode(), createNode(), createNode(), createNode(), createNode(), createNode(), createNode(), createNode(), createNode(), createNode()
-  ])
+  const	nodes = []
+  for (let index = 0; index < 40; index++) {
+    nodes.push(await createNode())
+  }
 
   for (let index = 0; index < nodes.length - 1; index++) {
     nodes[index].peerStore.addressBook.set(nodes[index + 1].peerId, nodes[index + 1].multiaddrs)
