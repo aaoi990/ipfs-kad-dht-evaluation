@@ -18,6 +18,9 @@ const delay = require('delay')
 const distance = require('xor-distance')
 const all = require('it-all')
 
+const NODE_COUNT = 40
+const DELAY = 0
+
 /**
  * Parse the CID and provider peer id from the key
  *
@@ -133,7 +136,7 @@ const sort_closest_nodes_dht = async (peers, query) => {
 ;
 (async () => {
   const	nodes = []
-  for (let index = 0; index < 40; index++) {
+  for (let index = 0; index < NODE_COUNT; index++) {
     nodes.push(await createNode())
   }
 
@@ -177,6 +180,8 @@ const sort_closest_nodes_dht = async (peers, query) => {
 
   console.log('\n Node 0 Found provider:', providers[0].id.toB58String(), providers)
 
+  await delay(DELAY)
+  
   nodes.forEach((node) => {
     node.stop()
   })
