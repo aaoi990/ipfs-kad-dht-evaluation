@@ -1,5 +1,7 @@
 # ipfs-kad-dht-evaluation
 
+Code used as part of the following paper: https://arxiv.org/abs/2109.08566 
+
 A very simple node program that runs up a series of libp2p nodes, sets a node as a content provider and then confirms that content can be found.
 
 # How to run
